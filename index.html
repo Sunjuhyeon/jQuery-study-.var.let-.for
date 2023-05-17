@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리연습하기</title>
+    <script 
+            src="https://code.jquery.com/jquery-1.12.4.js"
+            integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+            crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+        
+            let listDB = ["브랜드소개", "이벤트 상품", "커뮤니티", "체험신청하기"]
+            let listDBHref = ["#section1", "#section2", "#event", "#form"]
+            let tagli = ``
+
+            for(i in listDB){
+                tagli += `<li><a href="${listDBHref[i]}">${listDB[i]}</a></li>`
+            }
+
+            $("#gnb").append(tagli)
+
+            $("#gnb li").eq(0).addClass("bbb")
+
+            $("#gnb li").eq(-1).html("마지막")
+
+            $(".logo").css("display","none") //->class로고인 애 없어져!
+
+            $(".not(.logo)")
+
+
+            
+        })////ready -> 주석을 이용하여 마침표를 찍어주어 헷갈리지 않게 만든다.
+    </script>
+</head>
+<body>
+    <header id="hd">
+        <ul id="gnb"></ul>
+    </header>
+</body>
+</html>
